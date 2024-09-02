@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form method="post" action="@Url.Action("Ingresar", "Login")">
+    <div>
+        <label for="nombreUsuario">Nombre de Usuario:</label>
+        <input type="text" name="nombreUsuario" required />
+    </div>
+    <div>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" required />
+    </div>
+    @if (ViewBag.Error != null)
+    {
+        <div style="color: red;">
+            @ViewBag.Error
+        </div>
+    }
+    <div>
+        <button type="submit">Iniciar Sesión</button>
+    </div>
+</form>
